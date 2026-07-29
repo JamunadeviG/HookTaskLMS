@@ -15,4 +15,7 @@ class HookTaskLMS(Document):
 		from frappe.types import DF
 
 		description: DF.Data | None
-	# end: auto-generated types
+	# end: auto-generated typesgit push -u origin main
+	def before_save(self):
+		if(self.description == None):
+			self.description = "Default Description"
