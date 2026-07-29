@@ -138,6 +138,11 @@ app_include_js = "custom_desk.bundle.js"
 # ---------------
 # Hook on document methods and events
 
+doc_events = {
+    "HookTaskLMS":{
+        "validate":"my_app.api.custom_logic"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
