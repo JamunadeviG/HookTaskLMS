@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "Book-.####",
+ "creation": "2026-07-20 11:53:56.211429",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "book_id",
+  "book_name",
+  "author",
+  "price",
+  "published_date",
+  "available",
+  "amended_from",
+  "genre",
+  "city"
+ ],
+ "fields": [
+  {
+   "default": "Alchemist",
+   "description": "Enter your book name",
+   "fieldname": "book_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Book name"
+  },
+  {
+   "fieldname": "author",
+   "fieldtype": "Link",
+   "label": "Author",
+   "options": "Author"
+  },
+  {
+   "default": "100.0",
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "published_date",
+   "fieldtype": "Date",
+   "label": "Published date"
+  },
+  {
+   "default": "0",
+   "fieldname": "available",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Available"
+  },
+  {
+   "alignment": "Center",
+   "fieldname": "book_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Book ID",
+   "unique": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Library Book",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "genre",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Fiction\nScience\nHistory\nAI\nBiography"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Autocomplete",
+   "label": "city",
+   "options": "Chennai\nCoimbatore\ncudulur\nMadurai\nSalem\nTiruppur"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-21 14:18:39.928200",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "Library Book",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Orange",
+   "title": "Fiction"
+  },
+  {
+   "color": "Blue",
+   "title": "AI"
+  },
+  {
+   "color": "Yellow",
+   "title": "History"
+  },
+  {
+   "color": "Red",
+   "title": "Science"
+  },
+  {
+   "color": "Gray",
+   "title": "Biography"
+  }
+ ]
+}

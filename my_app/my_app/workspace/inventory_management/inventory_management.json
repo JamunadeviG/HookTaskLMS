@@ -1,0 +1,88 @@
+{
+ "app": "my_app",
+ "charts": [],
+ "content": "[{\"id\":\"CsZUPBNP0_\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"HEAD\",\"col\":12}},{\"id\":\"bv-oOhNz4k\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of Product\",\"col\":4}},{\"id\":\"S7PHuCXd8B\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"No. of Customers\",\"col\":4}},{\"id\":\"v5jysQ_wNC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Sold Items\",\"col\":4}},{\"id\":\"Rmh2ZS11-o\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Available Stock\",\"col\":6}},{\"id\":\"Y2LKUjvsZC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Avg Product Price\",\"col\":6}},{\"id\":\"e3Dz76_Uvl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Portfolio\",\"col\":3}},{\"id\":\"4Z2rO2kxgh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Products\",\"col\":3}},{\"id\":\"olhqaXbfsa\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"BOgEmWEgsg\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Proditems\",\"col\":3}}]",
+ "creation": "2026-07-21 13:57:51.973775",
+ "custom_blocks": [
+  {
+   "custom_block_name": "HEAD",
+   "label": "HEAD"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "cloud-moon",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Inventory Management",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2026-07-22 11:11:34.800556",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "Inventory Management",
+ "number_cards": [
+  {
+   "label": "No. of Product",
+   "number_card_name": "No. of Product"
+  },
+  {
+   "label": "No. of Customers",
+   "number_card_name": "No. of Customers"
+  },
+  {
+   "label": "Sold Items",
+   "number_card_name": "Sold Items-1"
+  },
+  {
+   "label": "Available Stock",
+   "number_card_name": "Sold Items"
+  },
+  {
+   "label": "Avg Product Price",
+   "number_card_name": "Avg Product Price"
+  }
+ ],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 0.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Portfolio",
+   "type": "URL",
+   "url": "http://jamuna.netlify.app"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Products",
+   "link_to": "Products",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Customer",
+   "link_to": "Customer",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Pink",
+   "doc_view": "List",
+   "label": "Proditems",
+   "link_to": "ProdItems",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Inventory Management",
+ "type": "Workspace"
+}

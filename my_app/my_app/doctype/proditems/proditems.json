@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "autoname": "p-.####",
+ "creation": "2026-07-21 15:07:11.461678",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_8ppp",
+  "pname",
+  "prod_name",
+  "quantity",
+  "price",
+  "total"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_8ppp",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "price.pname",
+   "fieldname": "pname",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Prod_Id",
+   "options": "Products"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fetch_from": "pname.price",
+   "fieldname": "price",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "fieldname": "total",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "pname.pname",
+   "fieldname": "prod_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Prod_name",
+   "options": "Products"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-07-24 14:02:09.018459",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "ProdItems",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

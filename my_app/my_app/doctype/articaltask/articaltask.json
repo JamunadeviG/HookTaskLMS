@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "autoname": "hash",
+ "creation": "2026-07-20 16:15:27.417845",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_deix",
+  "amended_from",
+  "title",
+  "reps",
+  "breaking_news",
+  "featured_image",
+  "image",
+  "published_date",
+  "published_time",
+  "summary",
+  "category",
+  "content",
+  "status",
+  "views",
+  "source",
+  "ispublished",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_deix",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "ArticalTask",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "breaking_news",
+   "fieldtype": "Check",
+   "label": "Breaking News"
+  },
+  {
+   "fieldname": "featured_image",
+   "fieldtype": "Attach Image",
+   "label": "Featured Image"
+  },
+  {
+   "fieldname": "published_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Published Date"
+  },
+  {
+   "fieldname": "published_time",
+   "fieldtype": "Time",
+   "label": "Published Time"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Small Text",
+   "label": "Summary",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "Politics\nSports\nTechnology\nBusiness\nEntertainment\nHealth\nEducation\nWorld",
+   "reqd": 1
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nReview\nPublished"
+  },
+  {
+   "fieldname": "views",
+   "fieldtype": "Int",
+   "label": "Views",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Data",
+   "label": "Source",
+   "mandatory_depends_on": "eval:doc.breaking_news;"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "featured_image"
+  },
+  {
+   "default": "0",
+   "fieldname": "ispublished",
+   "fieldtype": "Check",
+   "label": "isPublished"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reps",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reporter",
+   "options": "Reporter"
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "ispublished",
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Reporters",
+   "link_doctype": "Reporter",
+   "link_fieldname": "name1"
+  }
+ ],
+ "modified": "2026-07-21 19:01:37.797136",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "ArticalTask",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "route": "route",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "ASC",
+ "states": [],
+ "website_search_field": "title"
+}

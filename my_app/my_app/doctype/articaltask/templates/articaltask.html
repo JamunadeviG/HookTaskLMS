@@ -1,0 +1,105 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div style="
+    background-color: #e3e5e8;
+    width: 100%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(80, 78, 78);
+    ">
+    <h1 style="
+        font-size:40px;
+        color:#1f2937;
+        font-weight:bold;
+        text-align:center;
+        margin-bottom:10px;
+    ">
+        {{ title | e }}
+    </h1>
+
+    <div style="
+        display:flex;
+        justify-content:center;
+        gap:20px;
+        color:#6b7280;
+        font-size:14px;
+        margin-bottom:20px;
+    ">
+        <span>📅 {{ doc.published_date }}</span>
+        <span>🕒 {{ doc.published_time }}</span>
+    </div>
+    <div style="display: flex;
+                flex-direction: column;">
+        <div>
+            <div style="text-align:center;">
+                <img src="{{ doc.featured_image }}"
+                    alt="News Image"
+                    style="
+                        width:80%;
+                        max-width:700px;
+                        border-radius:12px;
+                        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+                        margin-bottom:25px;
+                    ">
+            </div>
+
+            <h3 style="
+                color:#2563eb;
+                margin-bottom:10px;
+            ">
+                📰 {{ doc.summary }}
+            </h3>
+        </div>
+        <div>
+            <h3>News</h3>
+            <p style="
+                display:inline-block;
+                background:#e0f2fe;
+                color:#0369a1;
+                padding:6px 14px;
+                border-radius:20px;
+                font-weight:bold;
+            ">
+                {{ doc.category }}
+            </p>
+
+            <div style="
+                margin-top:25px;
+                line-height:1.8;
+                font-size:18px;
+                color:#374151;
+                text-align:justify;
+            ">
+                {{ doc.content }}
+            </div>
+
+            <hr style="margin:35px 0;">
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                background:#f3f4f6;
+                padding:15px;
+                border-radius:10px;
+                font-size:15px;
+            ">
+            </div>
+        </div>
+    </div>
+
+        <span>👁️ Views: {{ doc.views }}</span>
+
+        <span style="
+            color:white;
+            background:#16a34a;
+            padding:5px 12px;
+            border-radius:5px;
+        ">
+            {{ doc.status }}
+        </span>
+
+        <span>🌐 Source: {{ doc.source }}</span>
+</div>
+{% endblock %}

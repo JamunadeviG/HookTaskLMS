@@ -4,7 +4,7 @@ app_publisher = "Jamuna"
 app_description = "It is a demo app"
 app_email = "jamunadevig.2006@gmail.com"
 app_license = "mit"
-
+app_include_js = "custom_desk.bundle.js"
 # Apps
 # ------------------
 
@@ -138,13 +138,6 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
 
 # Scheduled Tasks
 # ---------------
@@ -245,7 +238,7 @@ app_license = "mit"
 # ]
 
 # Automatically update python controller files with type annotations for this app.
-# export_python_type_annotations = True
+export_python_type_annotations = True
 
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs

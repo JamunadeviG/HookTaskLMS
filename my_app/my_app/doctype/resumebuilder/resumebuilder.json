@@ -1,0 +1,171 @@
+{
+ "actions": [],
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "creation": "2026-07-22 14:45:12.533211",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_4avn",
+  "image",
+  "uimage",
+  "name1",
+  "des",
+  "pno",
+  "gmail",
+  "address",
+  "port",
+  "links",
+  "st",
+  "member",
+  "aoi",
+  "cert",
+  "profile",
+  "edu",
+  "proj",
+  "achieve",
+  "stage",
+  "score"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_4avn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Upload Your Image"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "des",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "pno",
+   "fieldtype": "Data",
+   "label": "Phone no",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "gmail",
+   "fieldtype": "Data",
+   "label": "Gmail",
+   "options": "Email"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "port",
+   "fieldtype": "Data",
+   "label": "Portfolio"
+  },
+  {
+   "fieldname": "links",
+   "fieldtype": "JSON",
+   "label": "Links"
+  },
+  {
+   "fieldname": "st",
+   "fieldtype": "JSON",
+   "label": "Skills & Tools"
+  },
+  {
+   "description": "{\"1st\": \"\", \"2nd\":\"\"...}",
+   "fieldname": "member",
+   "fieldtype": "JSON",
+   "label": "Membership"
+  },
+  {
+   "description": "{\"1st\": \"\", \"2nd\":\"\"...}",
+   "fieldname": "aoi",
+   "fieldtype": "JSON",
+   "label": "Area of Interest"
+  },
+  {
+   "description": "{\"1st\": \"\", \"2nd\":\"\"...}",
+   "fieldname": "cert",
+   "fieldtype": "JSON",
+   "label": "Certifications"
+  },
+  {
+   "fieldname": "profile",
+   "fieldtype": "Data",
+   "label": "Profile"
+  },
+  {
+   "description": "{\"clg\":\"\", \"schl\":\"\"}",
+   "fieldname": "edu",
+   "fieldtype": "JSON",
+   "label": "Education"
+  },
+  {
+   "description": "{\"1st\": \"\", \"2nd\":\"\"...}",
+   "fieldname": "proj",
+   "fieldtype": "JSON",
+   "label": "Projects"
+  },
+  {
+   "description": "{\"1st\": \"\", \"2nd\":\"\"...}",
+   "fieldname": "achieve",
+   "fieldtype": "JSON",
+   "label": "Achievements"
+  },
+  {
+   "fieldname": "uimage",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "image"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "Pending\nWait\nApproved\nRejected",
+   "read_only": 1
+  },
+  {
+   "default": "50",
+   "fieldname": "score",
+   "fieldtype": "Int",
+   "label": "Score",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-27 12:15:33.631947",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "ResumeBuilder",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

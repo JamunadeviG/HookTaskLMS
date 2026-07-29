@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_bulk_edit": 1,
+ "allow_rename": 1,
+ "beta": 1,
+ "creation": "2026-07-23 14:44:56.940361",
+ "default_view": "List",
+ "description": "Ithu oru description",
+ "doctype": "DocType",
+ "documentation": "http://jamuna.netlify.app",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_ao1s",
+  "amended_from",
+  "title",
+  "age1",
+  "hello",
+  "password",
+  "image1",
+  "summa",
+  "pub",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ao1s",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "SubDocToLearn",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Title"
+  },
+  {
+   "fieldname": "password",
+   "fieldtype": "Password",
+   "label": "Password",
+   "permlevel": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "pub",
+   "fieldtype": "Check",
+   "label": "isPublished"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "route"
+  },
+  {
+   "fieldname": "image1",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "columns": 5,
+   "default": "20",
+   "fieldname": "age1",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age",
+   "non_negative": 1,
+   "print_hide_if_no_value": 1,
+   "read_only_depends_on": "eval:doc.title==\"Jamuna\"",
+   "sticky": 1,
+   "width": "200px"
+  },
+  {
+   "fieldname": "summa",
+   "fieldtype": "Data",
+   "label": "Summa"
+  },
+  {
+   "fieldname": "hello",
+   "fieldtype": "Data",
+   "label": "Hello",
+   "set_only_once": 1,
+   "translatable": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "has_web_view": 1,
+ "image_field": "image1",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "pub",
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-07-24 16:37:51.311735",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "SubDocToLearn",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "permlevel": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "jam",
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1,
+ "translated_doctype": 1,
+ "website_search_field": "title"
+}
