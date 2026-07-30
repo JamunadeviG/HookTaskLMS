@@ -1,7 +1,7 @@
 import frappe
 
-def daily_maintenance():
+def hourly_maintenance():
     frappe.log_error(
-        title="Daily Maintenance"
-        message="This is message from daily maintenance error log"
+        title="Hourly Maintenance",
+        message="This is message from hourly maintenance error log"
     )

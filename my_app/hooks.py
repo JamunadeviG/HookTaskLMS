@@ -148,12 +148,24 @@ doc_events = {
 # ---------------
 
 scheduler_events = {
-	"daily": [
-		"my_app.task.daily_maintenance"
-	]
+	# "all": [
+	# 	"my_app.tasks.all"
+	# ],
 	# "daily": [
 	# 	"my_app.tasks.daily"
-	# ]
+	# ],
+	# "hourly": [
+	# 	"my_app.tasks.hourly"
+	# ],
+	# "weekly": [
+	# 	"my_app.tasks.weekly"
+	# ],
+	# "monthly": [
+	# 	"my_app.tasks.monthly"
+	# ],
+    "hourly": [
+        "my_app.task.hourly_maintenance"
+    ]
 }
 
 # Testing
