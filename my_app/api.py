@@ -1,7 +1,8 @@
 import frappe
 from frappe.query_builder import DocType
+from frappe.utils import now
 
-def custom_logic(self):
+def custom_logic():
     frappe.msgprint("Hook Executed..!!!")
 
 @frappe.whitelist()
@@ -41,3 +42,31 @@ def update_library_books():
 
     frappe.db.commit()
     return records
+
+@frappe.whitelist()
+def recordsOfBookandAuthor():
+    books = frappe.get_list(
+        "Library Book",
+        fields = ["book_name", "author", "price"]
+    )
+
+    result = []
+
+    for book in books:
+        author = frappe.db.get_value(
+            "Author",
+            book.author,
+            "name1"
+        )
+        result.append(
+            {
+                "Book" : book.book_name,
+                "Author" : author,
+                "Price of Book" : book.price
+            }
+        )
+
+    return {
+        "TimeStamp" : now(),
+        "Records" : result
+    }
