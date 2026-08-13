@@ -133,3 +133,12 @@ def show_logger_objects():
         name: str(logger)
         for name, logger in frappe.loggers.items()
     }
+
+@frappe.whitelist()
+def create_new_task(task_name):
+    task = frappe.new_doc("Task")
+    task.task_title = task_name
+    task.description = "New task from the create_new_task method in api"
+    task.save()
+
+    return task.name
