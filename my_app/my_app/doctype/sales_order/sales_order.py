@@ -16,6 +16,7 @@ class SalesOrder(Document):
 
 		amended_from: DF.Link | None
 		customer: DF.Link | None
+		description: DF.Data | None
 		grand_total: DF.Currency
 		order_date: DF.Date | None
 		status: DF.Literal["Draft", "Submitted", "Cancelled"]

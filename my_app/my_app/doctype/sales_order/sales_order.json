@@ -11,6 +11,7 @@
   "amended_from",
   "customer",
   "order_date",
+  "description",
   "grand_total",
   "status"
  ],
@@ -50,13 +51,18 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Draft\nSubmitted\nCancelled"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-11 11:51:06.496113",
+ "modified": "2026-08-13 17:33:50.994075",
  "modified_by": "Administrator",
  "module": "My App",
  "name": "Sales Order",

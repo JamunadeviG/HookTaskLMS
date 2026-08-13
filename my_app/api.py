@@ -135,10 +135,12 @@ def show_logger_objects():
     }
 
 @frappe.whitelist()
-def create_new_task(task_name):
-    task = frappe.new_doc("Task")
-    task.task_title = task_name
-    task.description = "New task from the create_new_task method in api"
-    task.save()
+def create_new_total(total):
+    sales_order = frappe.new_doc("Sales Order")
+    sales_order.customer = 'cus-0002'
+    sales_order.order_date = '2026-08-14'
+    sales_order.grand_total = total
+    sales_order.description = "New total from the create_new_total method in api"
+    sales_order.save()
 
-    return task.name
+    return sales_order.name
