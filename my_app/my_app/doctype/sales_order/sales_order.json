@@ -2,20 +2,21 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "cus-.####",
- "creation": "2026-07-21 14:59:59.100006",
+ "autoname": "sales-.####",
+ "creation": "2026-08-11 11:41:32.437067",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_gv8p",
+  "section_break_cspv",
   "amended_from",
-  "name1",
-  "age",
-  "gmail"
+  "customer",
+  "order_date",
+  "grand_total",
+  "status"
  ],
  "fields": [
   {
-   "fieldname": "section_break_gv8p",
+   "fieldname": "section_break_cspv",
    "fieldtype": "Section Break"
   },
   {
@@ -23,37 +24,42 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Customer",
+   "options": "Sales Order",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name"
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   },
   {
-   "fieldname": "gmail",
-   "fieldtype": "Data",
-   "label": "Gmail"
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "label": "Order Date"
   },
   {
-   "allow_on_submit": 1,
-   "fieldname": "age",
-   "fieldtype": "Int",
-   "label": "Age"
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-11 10:40:55.297811",
+ "modified": "2026-08-11 11:51:06.496113",
  "modified_by": "Administrator",
  "module": "My App",
- "name": "Customer",
+ "name": "Sales Order",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

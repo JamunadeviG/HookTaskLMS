@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2026-08-12 12:13:10.890701",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-08-12 12:19:13.473204",
+ "modified_by": "Administrator",
+ "module": "My App",
+ "name": "hook-task-lms",
+ "owner": "Administrator",
+ "page_name": "hook-task-lms",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "HookTaskLMS"
+}

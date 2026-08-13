@@ -1,0 +1,24 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<div class="my-control">
+    <h2>Control Demo</h2>
+</div>
+
+<script>
+    frappe.ready(function () {
+
+        console.log("Page JS is running");
+
+        console.log("frappe:", frappe);
+
+        console.log(
+            "make_control:",
+            frappe.ui.form.make_control
+        );
+
+    });
+</script>
+
+{% endblock %}

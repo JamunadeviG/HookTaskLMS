@@ -7,7 +7,11 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_fnqu",
-  "description"
+  "description",
+  "status",
+  "priority",
+  "dynamic_controls",
+  "amended_from"
  ],
  "fields": [
   {
@@ -15,15 +19,46 @@
    "fieldtype": "Section Break"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "description",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "HookTaskLMS",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Priority"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Open\nClosed\nCancelled"
+  },
+  {
+   "fieldname": "dynamic_controls",
+   "fieldtype": "HTML",
+   "label": "Dynamic Controls"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-07-29 16:52:52.873927",
+ "modified": "2026-08-13 16:18:42.467191",
  "modified_by": "Administrator",
  "module": "My App",
  "name": "HookTaskLMS",

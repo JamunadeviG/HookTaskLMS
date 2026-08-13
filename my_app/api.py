@@ -1,9 +1,20 @@
 import frappe
 from frappe.query_builder import DocType
+from frappe.utils.logger import set_log_level
 from frappe.utils import now
 
-def custom_logic():
+def custom_logic(self):
     frappe.msgprint("Hook Executed..!!!")
+
+@frappe.whitelist()
+def summa():
+    res = frappe.get_doc(
+        "Author", "Auth-0004"
+    )
+    res.email = "updateILU@gmail.com"
+    res.save()
+    frappe.db.commit()
+    return res
 
 @frappe.whitelist()
 def update_library_books():
@@ -69,4 +80,56 @@ def recordsOfBookandAuthor():
     return {
         "TimeStamp" : now(),
         "Records" : result
+    }
+
+@frappe.whitelist()
+def send_test_mail():
+
+    frappe.sendmail(
+        recipients=["your_email@example.com"],
+        subject="Testing Mail Footer",
+        message="Hello! This is a test email."
+    )
+
+    return "Mail Sent"
+
+
+@frappe.whitelist()
+def msg():
+    frappe.msgprint("Hi from me........")
+
+@frappe.whitelist()
+def change_log_level(level):
+    set_log_level(level)
+    return f"Log level changed to {level}"
+
+
+@frappe.whitelist()
+def test_logger():
+    # Create/get one logger
+    logger = frappe.logger("my_app")
+
+    logger.debug("This is a DEBUG message")
+    logger.info("This is an INFO message")
+    logger.warning("This is a WARNING message")
+    logger.error("This is an ERROR message")
+    logger.critical("This is a CRITICAL message")
+
+    return "Logger executed"
+
+
+@frappe.whitelist()
+def show_loggers():
+    # Get all active loggers
+    return {
+        "loggers": list(frappe.loggers.keys())
+    }
+
+
+@frappe.whitelist()
+def show_logger_objects():
+    # Get the logger objects from frappe.loggers
+    return {
+        name: str(logger)
+        for name, logger in frappe.loggers.items()
     }

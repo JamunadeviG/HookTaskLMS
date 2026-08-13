@@ -5,6 +5,15 @@ app_description = "It is a demo app"
 app_email = "jamunadevig.2006@gmail.com"
 app_license = "mit"
 app_include_js = "custom_desk.bundle.js"
+default_mail_footer = """
+<hr>
+<div style="font-size:12px;color:gray;">
+    Sent via <strong>Todo App</strong><br>
+    Thank you for using our application.
+</div>
+"""
+calendars=["Task", "Hello"]
+fixtures = ["Task"]
 # Apps
 # ------------------
 

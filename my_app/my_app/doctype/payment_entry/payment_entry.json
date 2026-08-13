@@ -2,20 +2,22 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "cus-.####",
- "creation": "2026-07-21 14:59:59.100006",
+ "autoname": "Delivery-.####",
+ "creation": "2026-08-11 11:45:53.049565",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_gv8p",
+  "section_break_hcx7",
   "amended_from",
-  "name1",
-  "age",
-  "gmail"
+  "sales_order",
+  "customer",
+  "payment_date",
+  "amount",
+  "status"
  ],
  "fields": [
   {
-   "fieldname": "section_break_gv8p",
+   "fieldname": "section_break_hcx7",
    "fieldtype": "Section Break"
   },
   {
@@ -23,37 +25,48 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Customer",
+   "options": "Payment Entry",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name"
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
   },
   {
-   "fieldname": "gmail",
-   "fieldtype": "Data",
-   "label": "Gmail"
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
   },
   {
-   "allow_on_submit": 1,
-   "fieldname": "age",
-   "fieldtype": "Int",
-   "label": "Age"
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nCancelled"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-11 10:40:55.297811",
+ "modified": "2026-08-11 11:52:21.689337",
  "modified_by": "Administrator",
  "module": "My App",
- "name": "Customer",
+ "name": "Payment Entry",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

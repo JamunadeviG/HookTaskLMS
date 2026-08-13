@@ -5,7 +5,7 @@
 from frappe.model.document import Document
 
 
-class Customer(Document):
+class SalesOrder(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -14,10 +14,11 @@ class Customer(Document):
 	if TYPE_CHECKING:
 		from frappe.types import DF
 
-		age: DF.Int
 		amended_from: DF.Link | None
-		gmail: DF.Data | None
-		name1: DF.Data | None
+		customer: DF.Link | None
+		grand_total: DF.Currency
+		order_date: DF.Date | None
+		status: DF.Literal["Draft", "Submitted", "Cancelled"]
 	# end: auto-generated types
 
 	pass
