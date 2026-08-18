@@ -1,3 +1,3 @@
-![alt text](images\image.png)
-![alt text](images\image-1.png)
-![alt text](images\image-2.png)
+![alt text](images\JS_API_1st_1.png)
+![alt text](images\JS_API_1st_3.png)
+![alt text](images\JS_API_1st_2.png)

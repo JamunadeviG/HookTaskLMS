@@ -38,13 +38,13 @@ frappe.treeview_settings["TreeDocToLearn"] = {
 		},
 	],
 
-	// ignore_fields: ["parent_treedoctolearn"],
+	ignore_fields: ["parent_treedoctolearn"],
 
 	menu_items: [
 		{
 			label: "New TreeDocToLearn",
 			action: function () {
-				frappe.new_doc("TreeDocToLearn", true);
+				frappe.new_doc("TreeDocToLearn", false);
 			},
 			condition: "frappe.boot.user.can_create.indexOf('TreeDocToLearn') !== -1",
 		},
@@ -52,7 +52,7 @@ frappe.treeview_settings["TreeDocToLearn"] = {
 
 	onload: function (treeview) {
         // const a = frappe.set_route(['List', 'Task', 'Task'], { status: 'Open' });
-        // const a = frappe.format('2019-10-11', { fieldtype: 'Date' });
+        // const a = frappe.format('2019-24-11', { fieldtype: 'Date' });
         // const a = frappe.format('2399', { fieldtype: 'Currency' }, { inline: true });
         // console.log(a)
         // frappe.require(['/assets/todo_app/js/app.js', '/assets/todo_app/css/app.css'], () => {
@@ -82,6 +82,8 @@ frappe.treeview_settings["TreeDocToLearn"] = {
 function handle_electronic_change(){
     frappe.msgprint("Hello");
 }
+
+
 // frappe.msgprint({
 //     title: __('Notification'),
 

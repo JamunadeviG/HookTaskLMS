@@ -5,9 +5,9 @@ frappe.pages['hook-task-lms'].on_page_load = function(wrapper) {
 		single_column: true
 	});
 	page.set_title("Hook Task LMS - Dashboard");
-	page.set_title("Hook Task LMS");
+	// page.set_title("Hook Task LMS");
 	page.set_title_sub("Learning Management System");
-	// page.set_indigator("Active","Green")
+	page.set_indicator("Active","green")
 	page.set_primary_action("New Task", () => {
         frappe.new_doc("Task"),
 		'primary'
@@ -15,13 +15,7 @@ frappe.pages['hook-task-lms'].on_page_load = function(wrapper) {
 	page.set_secondary_action("Refresh", () => {
         frappe.msgprint("Refreshing HookTaskLMS...");
     });
-	page.add_menu_item("My Tasks", () => {
-        frappe.msgprint("Opening My Tasks");
-    });
-	page.add_menu_item("Completed Tasks", () => {
-        frappe.msgprint("Opening Completed Tasks");
-    });
-	// Actions
+
     page.add_action_item("Export Tasks", () => {
         frappe.msgprint("Exporting tasks...");
     });
@@ -29,6 +23,15 @@ frappe.pages['hook-task-lms'].on_page_load = function(wrapper) {
     page.add_action_item("Delete Tasks", () => {
         frappe.msgprint("Deleting tasks...");
     });
+
+	page.add_menu_item("My Tasks", () => {
+        frappe.msgprint("Opening My Tasks");
+    });
+	page.add_menu_item("Completed Tasks", () => {
+        frappe.msgprint("Opening Completed Tasks");
+    });
+	// Actions
+    
 
 	page.add_inner_button("All Tasks", () => {
         frappe.msgprint("Showing all tasks");
@@ -38,7 +41,7 @@ frappe.pages['hook-task-lms'].on_page_load = function(wrapper) {
         frappe.msgprint("Showing completed tasks");
     });
 	
-	page.change_inner_button_type('Completed', null, 'danger');
+	page.change_inner_button_type('Completed', null, 'primary');
 
 	// page.clear_actions_menu();
     // Grouped buttons
@@ -89,7 +92,7 @@ frappe.pages['hook-task-lms'].on_page_load = function(wrapper) {
         }
     });
 
-	page.set_indicator('Open', 'red')
+	// page.set_indicator('Close', 'red')
 
     // Get all field values
     let values = page.get_form_values();

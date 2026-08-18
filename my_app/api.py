@@ -2,6 +2,7 @@ import frappe
 from frappe.query_builder import DocType
 from frappe.utils.logger import set_log_level
 from frappe.utils import now
+from frappe.utils import *
 
 def custom_logic(self):
     frappe.msgprint("Hook Executed..!!!")
@@ -144,3 +145,9 @@ def create_new_total(total):
     sales_order.save()
 
     return sales_order.name
+
+@frappe.whitelist()
+def testing():
+	return{
+        date_diff('2006-04-20', today())
+    }
