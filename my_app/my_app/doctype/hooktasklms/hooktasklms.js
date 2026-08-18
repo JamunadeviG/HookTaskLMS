@@ -333,3 +333,24 @@
 
 // // });
 
+frappe.ui.form.on("HookTaskLMS", {
+    refresh(frm){
+        let dialog = new frappe.ui.Dialog({
+            title: "Get First Name",
+            fields:[{
+                fieldname: "first_name",
+                fieldtype: "Data",
+                label: "First Name"
+            }],
+            primary_action_label: "Create",
+            primary_action(values){
+                dialog.hide();
+                frappe.route_options= {
+                    "first_name": values.first_name
+                };
+                frappe.new_doc("Contact");
+            }
+        })
+        dialog.show()
+    }
+})
