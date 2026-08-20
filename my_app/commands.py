@@ -1,7 +1,7 @@
-# import click
+import click
 
-# @click.command()
-# def sanusha():
-#     print("The task is executed welllllll...💕")
+@click.command()
+def sanusha():
+    print("The task is executed welllllll...💕")
 
-# commands = [sanusha]
+commands = [sanusha]
