@@ -1,11 +1,64 @@
 // // // Copyright (c) 2026, Jamuna and contributors
 // // // For license information, please see license.txt
 
-// // // frappe.ui.form.on("HookTaskLMS", {
-// // // 	refresh(frm) {
+// frappe.ui.form.on("HookTaskLMS", {
+// 	refresh(frm) {
+//         frappe.realtime.on("trial", (data)=>{
+//             console.log(data.name+ " Hi madammmmmm")
+//             frappe.msgprint("Hello "+data.name+" ,your age is "+data.age);
+//         }),
+//         frappe.call({
+//             method: "my_app.api.testing"
+//         });
+// 	}
+// });
 
-// // // 	},
-// // // });
+frappe.ui.form.on("HookTaskLMS", {
+
+    onload(frm) {
+
+        console.log("HookTaskLMS loaded");
+
+        // Listen for response from Python
+        frappe.realtime.socket.on(
+            "test_get_doc_result",
+            (data) => {
+
+                console.log(
+                    "Received from server:",
+                    data
+                );
+
+                if (data.ok) {
+
+                    frappe.msgprint({
+                        title: "Document Details",
+                        message: `
+                            <b>Site:</b> ${data.site}<br>
+                            <b>User:</b> ${data.user}<br>
+                            <b>DocType:</b> ${data.doctype}<br>
+                            <b>Name:</b> ${data.name}<br>
+                            <b>Modified:</b> ${data.modified}
+                        `
+                    });
+
+                } else {
+
+                    frappe.msgprint({
+                        title: "Error",
+                        indicator: "red",
+                        message: data.error
+                    });
+
+                }
+
+            }
+        );
+
+    }
+
+});
+
 // frappe.ui.form.on("HookTaskLMS",{
 //     refresh(frm){
 // //         // frm.add_custom_button('Open Reference form', () => {
@@ -333,24 +386,24 @@
 
 // // });
 
-frappe.ui.form.on("HookTaskLMS", {
-    refresh(frm){
-        let dialog = new frappe.ui.Dialog({
-            title: "Get First Name",
-            fields:[{
-                fieldname: "first_name",
-                fieldtype: "Data",
-                label: "First Name"
-            }],
-            primary_action_label: "Create",
-            primary_action(values){
-                dialog.hide();
-                frappe.route_options= {
-                    "first_name": values.first_name
-                };
-                frappe.new_doc("Contact");
-            }
-        })
-        dialog.show()
-    }
-})
+// frappe.ui.form.on("HookTaskLMS", {
+//     refresh(frm){
+//         let dialog = new frappe.ui.Dialog({
+//             title: "Get First Name",
+//             fields:[{
+//                 fieldname: "first_name",
+//                 fieldtype: "Data",
+//                 label: "First Name"
+//             }],
+//             primary_action_label: "Create",
+//             primary_action(values){
+//                 dialog.hide();
+//                 frappe.route_options= {
+//                     "first_name": values.first_name
+//                 };
+//                 frappe.new_doc("Contact");
+//             }
+//         })
+//         dialog.show()
+//     }
+// })

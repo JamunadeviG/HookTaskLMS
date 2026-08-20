@@ -1,4 +1,5 @@
 import frappe
+import time
 from frappe.query_builder import DocType
 from frappe.utils.logger import set_log_level
 from frappe.utils import now
@@ -148,6 +149,32 @@ def create_new_total(total):
 
 @frappe.whitelist()
 def testing():
-	return{
-        date_diff('2006-04-20', today())
-    }
+    frappe.publish_realtime(
+        "trial", 
+        {
+            "name": "Jamuna",
+            "age": 20
+        }
+    )
+    return "Success buddy..."
+
+@frappe.whitelist()
+def bg_job_test():
+    frappe.enqueue(
+        "my_app.api.short_job",
+        queue="short"
+    )
+    return "Successfully completed1"
+
+def short_job():
+    for i in range(10):
+        print(f"Process {i+1} is completed")
+        time.sleep(2)
+    return ("Successfully completed2")
+
+@frappe.whitelist()
+def download_text_file():
+    frappe.response.filename = "hello.txt"
+    frappe.response.filecontent = b"Hello world from Jamuna"
+    frappe.response.type = "pdf"
+    frappe.response.display_content_as = "attachment"
