@@ -3,11 +3,11 @@
 
 frappe.query_reports["Customer Report"] = {
 	filters: [
-		// {
-		// 	"fieldname": "my_filter",
-		// 	"label": __("My Filter"),
-		// 	"fieldtype": "Data",
-		// 	"reqd": 1,
-		// },
+		{
+			fieldname: "name1",
+			label: __("Customer"),
+			fieldtype: "Link",
+			options: "Customer",
+		},
 	],
 };
