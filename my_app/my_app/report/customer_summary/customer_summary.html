@@ -1,0 +1,55 @@
+<div style="width: 100%; margin: 0; padding: 0;">
+
+    <div class="panel panel-primary" style="margin: 0;">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">Customer Summary</h3>
+        </div>
+
+        <div class="panel-body" style="padding: 15px;">
+
+            <div class="alert alert-info">
+                <strong>Selected Customer:</strong>
+                {%= filters.customer_name || "All Customers" %}
+            </div>
+
+            <div style="width: 100%; overflow-x: auto;">
+            <table class="table table-bordered table-striped table-hover"
+                   style="width: 100%; margin-bottom: 0;">
+
+                <thead>
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for (var i = 0, l = data.length; i < l; i++) { %}
+
+                    <tr>
+                        <td>{%= data[i].customer_name %}</td>
+                        <td>{%= data[i].email %}</td>
+                        <td>{%= data[i].phone %}</td>
+                        <td>{%= format_currency(data[i].amount) %}</td>
+                    </tr>
+
+                    {% } %}
+
+                </tbody>
+
+            </table>
+            </div>
+        </div>
+
+        <div class="panel-footer">
+            <strong>Total Customers:</strong>
+            {%= data.length %}
+        </div>
+
+    </div>
+
+</div>
