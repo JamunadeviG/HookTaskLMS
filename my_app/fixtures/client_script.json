@@ -1,0 +1,68 @@
+[
+ {
+  "docstatus": 1,
+  "doctype": "Client Script",
+  "dt": "Invoices",
+  "enabled": 1,
+  "modified": "2026-07-20 16:03:55.184266",
+  "module": "My App",
+  "name": "items",
+  "script": "frappe.ui.form.on(\"Items\", {\r\n    quantity(frm, cdt, cdn) {\r\n        calculate_total(cdt, cdn);\r\n    },\r\n\r\n    price(frm, cdt, cdn) {\r\n        calculate_total(cdt, cdn);\r\n    }\r\n});\r\n\r\nfunction calculate_total(cdt, cdn) {\r\n    let row = locals[cdt][cdn];\r\n\r\n    frappe.model.set_value(\r\n        cdt,\r\n        cdn,\r\n        \"total\",\r\n        (row.quantity || 0) * (row.price || 0)\r\n    );\r\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Billing",
+  "enabled": 1,
+  "modified": "2026-07-21 15:15:28.165269",
+  "module": "My App",
+  "name": "Billing",
+  "script": "frappe.ui.form.on(\"ProdItems\", {\r\n    quantity(frm, cdt, cdn) {\r\n        calculate_total(cdt, cdn);\r\n    },\r\n\r\n    price(frm, cdt, cdn) {\r\n        calculate_total(cdt, cdn);\r\n    }\r\n});\r\n\r\nfunction calculate_total(cdt, cdn) {\r\n    let row = locals[cdt][cdn];\r\n\r\n    frappe.model.set_value(\r\n        cdt,\r\n        cdn,\r\n        \"total\",\r\n        (row.quantity || 0) * (row.price || 0)\r\n    );\r\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Task",
+  "enabled": 1,
+  "modified": "2026-08-06 15:56:51.917965",
+  "module": "Todo App",
+  "name": "Faah",
+  "script": "frappe.ui.form.on(\"Task\", {\r\n    after_save(frm) {\r\n        frappe.show_alert(\"Task Saved!\");\r\n        frappe.utils.play_sound(\"faah\");\r\n    }\r\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Student",
+  "enabled": 1,
+  "modified": "2026-08-10 14:48:31.651347",
+  "module": null,
+  "name": "DiscardCheck",
+  "script": "frappe.ui.form.on('Student', {\n\tbefore_discard(frm) {\n\t\tfrappe.msgprint(\"Before_Discard\");\n\t\tconsole.log(\"Hello from before_discard\");\n\t}\n});",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "HookTaskLMS",
+  "enabled": 1,
+  "modified": "2026-08-14 16:25:09.820401",
+  "module": null,
+  "name": "ListViewForHook",
+  "script": "frappe.listview_settings[\"HookTaskLMS\"] = frappe.listview_settings[\"HookTaskLMS\"] || {}\r\nfrappe.listview_settings[\"HookTaskLMS\"].formatters = {\r\n    description(val) {\r\n        return val.bold();\r\n    }\r\n}",
+  "view": "List"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "User",
+  "enabled": 1,
+  "modified": "2026-09-07 15:14:27.765751",
+  "module": null,
+  "name": "User_Email_Sent",
+  "script": "frappe.ui.form.on('User', {\r\n    refresh: function(frm) {\r\n        frm.add_custom_button(\r\n            'Send Welcome Email',\r\n            function() {\r\n                frappe.msgprint('Email Sent!');\r\n            },\r\n            'Actions'\r\n        );\r\n    }\r\n});",
+  "view": "Form"
+ }
+]

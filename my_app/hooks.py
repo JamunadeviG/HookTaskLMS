@@ -13,7 +13,7 @@ default_mail_footer = """
 </div>
 """
 calendars=["Task", "Hello"]
-fixtures = ["Task"]
+fixtures = ["Client Script"]
 # Apps
 # ------------------
 
