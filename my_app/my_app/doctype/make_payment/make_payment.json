@@ -2,20 +2,22 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "CUS-.####",
- "creation": "2026-07-21 14:59:59.100006",
+ "autoname": "PAY-.###",
+ "creation": "2026-08-26 14:14:42.433939",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_gv8p",
+  "section_break_cipl",
   "amended_from",
-  "name1",
-  "email",
-  "phone"
+  "bill_id",
+  "total_amount",
+  "balance_amount",
+  "pay_via",
+  "pay_amount"
  ],
  "fields": [
   {
-   "fieldname": "section_break_gv8p",
+   "fieldname": "section_break_cipl",
    "fieldtype": "Section Break"
   },
   {
@@ -23,38 +25,56 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Customer",
+   "options": "Make Payment",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "name1",
+   "columns": 2,
+   "fieldname": "bill_id",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Name"
+   "label": "Bill ID",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
   },
   {
-   "fieldname": "phone",
-   "fieldtype": "Data",
-   "label": "Phone No",
-   "options": "Phone"
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount"
   },
   {
-   "allow_on_submit": 1,
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email"
+   "fieldname": "balance_amount",
+   "fieldtype": "Float",
+   "label": "Balance Amount",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "pay_via",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Pay Via",
+   "options": "Cash\nUPI\nCredit Card"
+  },
+  {
+   "fieldname": "pay_amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pay Amount",
+   "non_negative": 1,
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-26 11:33:58.354102",
+ "modified": "2026-09-05 18:56:24.986654",
  "modified_by": "Administrator",
  "module": "My App",
- "name": "Customer",
+ "name": "Make Payment",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -72,11 +92,10 @@
    "write": 1
   }
  ],
+ "quick_entry": 1,
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
- "title_field": "name1"
+ "states": []
 }

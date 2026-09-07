@@ -1,0 +1,149 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<link rel="stylesheet" href="/payment/payment.css">
+
+<div class="payment-container">
+
+    <h1>Make Payment</h1>
+
+    <!-- Bill Search -->
+
+    <div class="search-section">
+
+        <label>Bill ID</label>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="bill_id"
+                placeholder="Enter Bill ID"
+            >
+
+            <button type="button" id="search_btn">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bill Details -->
+
+    <div id="bill_section" class="hidden">
+
+        <h2>Bill Details</h2>
+
+        <div class="customer-details">
+
+            <p>
+                <strong>Customer:</strong>
+                <span id="customer_name"></span>
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <span id="customer_phone"></span>
+            </p>
+
+        </div>
+
+
+        <!-- Products -->
+
+        <h3>Products</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="products_body">
+
+            </tbody>
+
+        </table>
+
+
+        <!-- Bill Summary -->
+
+        <div class="summary">
+
+            <p>
+                Gross Total:
+                ₹<span id="gross_total">0</span>
+            </p>
+
+            <p>
+                Discount:
+                ₹<span id="discount">0</span>
+            </p>
+
+            <p class="total">
+                Total Amount:
+                ₹<span id="total_amount">0</span>
+            </p>
+
+            <p class="balance">
+                Balance:
+                ₹<span id="balance_amount">0</span>
+            </p>
+
+        </div>
+
+
+        <!-- Payment -->
+
+        <div class="payment-section">
+
+            <label>Pay Via</label>
+
+            <select id="pay_via">
+
+                <option value="">Select Payment Method</option>
+                <option value="UPI">UPI</option>
+                <option value="Card">Card</option>
+                <option value="Cash">Cash</option>
+
+            </select>
+
+
+            <label>Pay Amount</label>
+
+            <input
+                type="number"
+                id="pay_amount"
+                min="1"
+                step="0.01"
+                placeholder="Enter amount"
+            >
+
+
+            <button type="button" id="pay_btn">
+                Pay Now
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Message -->
+
+    <div id="message"></div>
+
+</div>
+
+<script src="/payment/payment.js"></script>
+
+{% endblock %}

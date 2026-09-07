@@ -1,11 +1,11 @@
 # Copyright (c) 2026, Jamuna and contributors
 # For license information, please see license.txt
 
-import frappe
+# import frappe
 from frappe.model.document import Document
 
 
-class Customer(Document):
+class Discount(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -15,8 +15,10 @@ class Customer(Document):
 		from frappe.types import DF
 
 		amended_from: DF.Link | None
-		email: DF.Data | None
-		name1: DF.Data | None
-		phone: DF.Data | None
+		discount_name: DF.Data | None
+		discount_percentage: DF.Float
+		is_active: DF.Check
+		min_price: DF.Float
 	# end: auto-generated types
 
+	pass

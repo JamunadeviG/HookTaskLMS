@@ -7,12 +7,28 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_ga1b",
   "amended_from",
-  "name1",
+  "section_break_ga1b",
+  "cd_section",
+  "customer_phone",
+  "button",
+  "cd2_column",
   "cname",
-  "customer_mailid",
-  "products"
+  "customerdetails2_section",
+  "products",
+  "td_section",
+  "td1_column",
+  "gross_total",
+  "workflow_state",
+  "td2_column",
+  "discount_coupon",
+  "discount_applied",
+  "td3_column",
+  "total_amount",
+  "column_break_y0mo",
+  "balance_amount",
+  "tab_2_tab",
+  "age"
  ],
  "fields": [
   {
@@ -31,14 +47,6 @@
    "search_index": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Customer ID",
-   "options": "Customer",
-   "reqd": 1
-  },
-  {
    "allow_bulk_edit": 1,
    "fieldname": "products",
    "fieldtype": "Table",
@@ -47,23 +55,107 @@
    "show_description_on_click": 1
   },
   {
-   "fetch_from": "name1.name1",
    "fieldname": "cname",
    "fieldtype": "Data",
-   "label": "Customer Name"
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "options": "Customer"
   },
   {
-   "fetch_from": "name1.gmail",
-   "fieldname": "customer_mailid",
+   "fieldname": "discount_applied",
+   "fieldtype": "Float",
+   "label": "Discount Applied"
+  },
+  {
+   "fieldname": "gross_total",
+   "fieldtype": "Float",
+   "label": "Gross Total"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Float",
+   "label": "Total Amount"
+  },
+  {
+   "fetch_from": "cname.phone",
+   "fieldname": "customer_phone",
    "fieldtype": "Data",
-   "label": "Customer mailId"
+   "label": "Customer Phone no",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customerdetails2_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "cd_section",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cd2_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "td_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "td1_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "td2_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "td3_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "button_color": "Warning",
+   "fieldname": "button",
+   "fieldtype": "Button",
+   "hidden": 1,
+   "label": "Create Customer"
+  },
+  {
+   "fieldname": "discount_coupon",
+   "fieldtype": "Data",
+   "label": "Discount Coupon",
+   "options": "Discount"
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Workflow State"
+  },
+  {
+   "fieldname": "column_break_y0mo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "balance_amount",
+   "fieldtype": "Float",
+   "label": "Balance Amount"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Tab 2"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-10 16:43:54.080199",
+ "modified": "2026-09-05 19:04:53.702336",
  "modified_by": "Administrator",
  "module": "My App",
  "name": "Billing",
@@ -88,7 +180,5 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
- "timeline_field": "name1",
- "track_changes": 1
+ "states": []
 }

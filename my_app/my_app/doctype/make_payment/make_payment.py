@@ -1,11 +1,11 @@
 # Copyright (c) 2026, Jamuna and contributors
 # For license information, please see license.txt
 
-import frappe
+# import frappe
 from frappe.model.document import Document
 
 
-class Customer(Document):
+class MakePayment(Document):
 	# begin: auto-generated types
 	# This code is auto-generated. Do not modify anything in this block.
 
@@ -15,8 +15,11 @@ class Customer(Document):
 		from frappe.types import DF
 
 		amended_from: DF.Link | None
-		email: DF.Data | None
-		name1: DF.Data | None
-		phone: DF.Data | None
+		balance_amount: DF.Float
+		bill_id: DF.Data
+		pay_amount: DF.Float
+		pay_via: DF.Literal["Cash", "UPI", "Credit Card"]
+		total_amount: DF.Float
 	# end: auto-generated types
 
+	pass

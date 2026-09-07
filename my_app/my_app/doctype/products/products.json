@@ -38,7 +38,7 @@
   },
   {
    "fieldname": "price",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "in_list_view": 1,
    "label": "price",
    "options": "price"
@@ -54,7 +54,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-07-21 15:29:27.363754",
+ "modified": "2026-08-26 12:35:02.089770",
  "modified_by": "Administrator",
  "module": "My App",
  "name": "Products",

@@ -2,6 +2,7 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
+ "autoname": "hash",
  "creation": "2026-07-29 16:52:11.670459",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -58,10 +59,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-13 16:18:42.467191",
+ "modified": "2026-09-05 12:49:32.222868",
  "modified_by": "Administrator",
  "module": "My App",
  "name": "HookTaskLMS",
+ "naming_rule": "Random",
  "owner": "Administrator",
  "permissions": [
   {

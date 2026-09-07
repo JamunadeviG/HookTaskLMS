@@ -15,11 +15,17 @@ class Billing(Document):
 		from frappe.types import DF
 		from my_app.my_app.doctype.proditems.proditems import ProdItems
 
+		age: DF.Data | None
 		amended_from: DF.Link | None
+		balance_amount: DF.Float
 		cname: DF.Data | None
-		customer_mailid: DF.Data | None
-		name1: DF.Link
+		customer_phone: DF.Data
+		discount_applied: DF.Float
+		discount_coupon: DF.Data | None
+		gross_total: DF.Float
 		products: DF.Table[ProdItems]
+		total_amount: DF.Float
+		workflow_state: DF.Data | None
 	# end: auto-generated types
 
 	pass

@@ -2,20 +2,21 @@
  "actions": [],
  "allow_bulk_edit": 1,
  "allow_rename": 1,
- "autoname": "CUS-.####",
- "creation": "2026-07-21 14:59:59.100006",
+ "autoname": "COUPON-.###",
+ "creation": "2026-08-26 12:03:22.623431",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_gv8p",
+  "section_break_mwf1",
   "amended_from",
-  "name1",
-  "email",
-  "phone"
+  "is_active",
+  "discount_name",
+  "min_price",
+  "discount_percentage"
  ],
  "fields": [
   {
-   "fieldname": "section_break_gv8p",
+   "fieldname": "section_break_mwf1",
    "fieldtype": "Section Break"
   },
   {
@@ -23,38 +24,41 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Customer",
+   "options": "Discount",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "name1",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Name"
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
   },
   {
-   "fieldname": "phone",
+   "fieldname": "discount_name",
    "fieldtype": "Data",
-   "label": "Phone No",
-   "options": "Phone"
+   "label": "Discount name"
   },
   {
-   "allow_on_submit": 1,
-   "fieldname": "email",
-   "fieldtype": "Data",
-   "label": "Email"
+   "fieldname": "min_price",
+   "fieldtype": "Float",
+   "label": "Min Price"
+  },
+  {
+   "fieldname": "discount_percentage",
+   "fieldtype": "Float",
+   "label": "Discount Percentage"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-08-26 11:33:58.354102",
+ "modified": "2026-08-26 12:35:42.528751",
  "modified_by": "Administrator",
  "module": "My App",
- "name": "Customer",
+ "name": "Discount",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -74,9 +78,7 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "show_title_field_in_link": 1,
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
- "title_field": "name1"
+ "states": []
 }

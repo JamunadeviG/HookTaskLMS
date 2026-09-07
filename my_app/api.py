@@ -178,3 +178,39 @@ def download_text_file():
     frappe.response.filecontent = b"Hello world from Jamuna"
     frappe.response.type = "pdf"
     frappe.response.display_content_as = "attachment"
+
+import frappe
+
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def product_query(doctype, txt, searchfield, start, page_len, filters):
+
+    return frappe.db.sql("""
+        SELECT
+            name,
+            pname,
+            price
+        FROM `tabProducts`
+        WHERE
+            pname LIKE %(txt)s
+            OR name LIKE %(txt)s
+        ORDER BY pname
+        LIMIT %(start)s, %(page_len)s
+    """, {
+        "txt": f"%{txt}%",
+        "start": start,
+        "page_len": page_len
+    })
+
+
+@frappe.whitelist()
+def create_customer(name, phone, email):
+    doc = frappe.get_doc({
+        "doctype": "Customer",
+        "name1": name,
+        "phone": phone,
+        "email": email
+    })
+    doc.insert()
+    return name
